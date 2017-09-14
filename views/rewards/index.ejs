@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <% campaign.rewards.forEach((reward) => { %>
+      <div class="col-sm-7 reward-wrapper" data-reward="<%= reward._id %>">
+        <h2>$<%= reward.amount %> or more</h2>
+        <h3><%= reward.title %></h3>
+        <p class="light-text"><%= reward.description %></p>
+        <form class="js-reward-form" data-campaign="<%= campaign._id %>" data-reward="<%= reward._id %>">
+        <hr>
+          
+            <label for="pledge-amount">Pledge Amount</label><br>
+            <input id="pledge-amount" type="text" class="js-reward-input form-control">
+            <button class="submit-reward" type="submit">Get Reward</button>
+          
+        </form>
+        <span class="reward-success glyphicon glyphicon-ok"></span>
+      </div>
+    <%  }) %>
+  </div>
+</div>
